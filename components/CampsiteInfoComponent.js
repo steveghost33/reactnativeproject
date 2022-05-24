@@ -74,7 +74,7 @@ function RenderComments({ comments }) {
       </View>
     );
   };
-  
+
   return (
     <Card title="Comments">
       <FlatList
