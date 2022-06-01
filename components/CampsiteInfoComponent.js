@@ -9,7 +9,7 @@ import {
   StyleSheet,
   Alert,
   PanResponder,
-  Share,
+  Share
 } from "react-native";
 import { Card, Icon, Input, Rating } from "react-native-elements";
 import { connect } from "react-redux";
@@ -79,14 +79,13 @@ function RenderCampsite(props) {
   const shareCampsite = (title, message, url) => {
     Share.share(
       {
-        title,
+        title: title, 
         message: `${title}: ${message} ${url}`,
-        url,
+        url: url
       },
       {
-        dialogTitle: "Share " + title,
-      }
-    );
+        dialogTitle: "Share " + title
+      });
   };
 
   if (campsite) {
@@ -134,9 +133,7 @@ function RenderCampsite(props) {
                 shareCampsite(
                   campsite.name,
                   campsite.description,
-                  baseUrl + campsite.image
-                )
-              }
+                  baseUrl + campsite.image)}
             />
           </View>
         </Card>
